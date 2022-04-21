@@ -1,0 +1,419 @@
+$header: #0063B2;
+$portfolio-color: #6279FF;
+
+@mixin nav_abs_height($right) {
+  position: absolute;
+  height: 90px;
+  right: $right;
+}
+
+.header__navigation {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 90px;
+  background-color: #F2F1F0;
+}
+
+.navigation__logo {
+  width: 192px;
+  height: 90px;
+  background-color: $header;
+  line-height: 90px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 28px;
+}
+
+.navigation__menu {
+  @include nav_abs_height(8%);
+  line-height: 80px;
+}
+
+.navigation__menuref {
+  margin-left: 30px;
+  text-decoration: none;
+  color: $header;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.navigation__line {
+  @include nav_abs_height(7%);
+  width: 2px;
+  background-color: #C7C7C7;
+}
+
+.navigation__lang {
+  @include nav_abs_height(2%);
+  line-height: 80px;
+}
+
+.lang__text {
+  margin-right: 5px;
+  font-family: "Montserrat", sans-serif;
+  color: #8D8D8D;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.header__bg {
+  width: 100%;
+    
+  img {
+    width: 100%;
+  }
+}
+
+.portfolio {
+  width: 1276px;
+  margin: 0 auto;
+
+  .portfolio__heading {
+    margin-bottom: 150px;
+    text-align: center;
+    letter-spacing: 2px;
+
+    .heading__heading {
+      font-family: 'PT Serif', serif;
+      font-size: 42px;
+    }
+
+    .heading__text {
+        width: 870px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        margin: 0 auto;
+        line-height: 30px;
+    }
+  }
+
+  .portfolio__container {
+    letter-spacing: 2px;
+
+    .item__image {
+      width: 628px;
+      height: 391px;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+    }
+
+    .item__text {
+      width: 720px;
+      height: 353px;
+      position: absolute;
+      top: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+      color: #fff;
+      background-color: $portfolio-color;
+      
+      .item__textheading {
+        font-family: 'PT Serif', serif;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+
+      .item__textmessage {
+          font-size: 18px;
+          font-family: 'Montserrat', sans-serif;
+          line-height: 30px;
+      }
+    }
+
+    .item__caption {
+      position: absolute;
+      bottom: 120px;
+      color: #504A4A;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .container__item {
+      height: 620px;
+      position: relative;
+    }
+
+    .container__item:nth-child(2n+1) {
+      .item__image {
+        left: 0;
+      }
+
+      .item__text {
+        right: 0;
+        padding-left: 120px;
+        padding-right: 55px;
+        text-align: left;
+      }
+
+      .item__caption {
+        left: 130px;
+      }
+    }
+
+    .container__item:nth-child(2n+2) {
+      .item__image {
+        right: 0;
+      }
+
+      .item__text {
+        left: 0;
+        padding-right: 120px;
+        padding-left: 55px;
+        text-align: right;
+      }
+
+      .item__caption {
+        right: 130px;
+      }
+    }
+  }
+}
+
+.chat__wrap {
+  position: relative;
+}
+
+.chat__container {
+  width: 80px;
+  height: 76px;
+  position: absolute;
+  right: 30px;
+  top: -95px;
+  vertical-align: middle;
+
+  .circles__wrap {
+    position: relative;
+    top: -50px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.footer__wrap {
+  height: 774px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  .footer__menu {
+    position: absolute;
+    top: -48px;
+    width: 1060px;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    letter-spacing: 2px;
+    z-index: 2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .footer__menuref {
+      @extend .navigation__menuref;
+      margin: auto 40px;
+    }
+  }
+
+  .footer__container {
+    height: 712px;
+    width: 100%;
+    display: flex;
+    
+    .footer__contact {
+      width: 50%;
+      background-image: url(./components/footer/images/mask.png);
+      
+      
+      .footer__contact--mask {
+        width: 100%;
+        height: 100%;
+        background-color: $header;
+        opacity: 88%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .contact__list {
+           width: 40%;
+           height: 40%;            
+
+          .contact__adress, .contact__mail, .contact__phone {
+            display: flex;
+            position: relative;
+            margin-bottom: 60px;
+            
+            .adress__text {
+              width: 275px;
+              height: 60px;
+              position: absolute;
+              left: 100px;
+              margin: 0;
+              display: flex;
+              align-items: center;
+              font-family: "Lato", sans-serif;
+              font-size: 25px;
+              font-weight: 700;
+              color: #fff;
+              letter-spacing: 2px;
+            }
+
+            .mail__text {
+              @extend .adress__text;
+            }
+
+            .phone__text {
+              @extend .adress__text;
+              font-family: "Montserrat", sans-serif;
+              font-weight: 500;
+            }
+          }
+
+          .adress__img--centre {
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 11px;
+
+          }
+
+          .mail__img--centre {
+            @extend .adress__img--centre;
+            top: 7px;
+            left: 7px;
+          }
+        }
+      }
+      
+    }
+
+    .footer__form--wrap {
+      width: 50%;
+      background-color: #EEE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer__form {
+      width: 60%;
+      height: 70%;
+      position: relative;
+            
+      .form__heading {
+        text-align: center;
+        font-size: 24px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        letter-spacing: 3px;
+      }
+
+      @mixin form__input {
+        width: 100%;
+        height: 60px;
+        border: none;
+        margin-top: 20px;
+      }
+
+      .form__input--firma {
+        @include form__input;
+      }
+
+      .form__input--mail, .form__input--telefon {
+        @include form__input;
+        width: 48%;
+      }
+
+      .form__input--telefon {
+        position: absolute;
+        right: 0;
+      }
+
+      .form__input--answer {
+        @include form__input;
+        height: 160px;
+        resize: none;
+        margin-bottom: 20px;
+      }
+
+      .form__input--firma::placeholder, .form__input--mail::placeholder, .form__input--telefon::placeholder {
+        height: 22px;
+        line-height: 100%;
+        padding-left: 22px;
+        font-size:18px;
+        font-weight: 500;
+        color: #ABAAAA;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 2px;
+      }
+
+      .form__input--answer::placeholder {
+        @extend .form__input--firma::placeholder;
+        padding-top: 22px;
+      }
+
+      .input__submit--wrapper {
+        width: 198px;
+        height: 48px;
+        margin: 0 auto;
+        z-index: 3;
+        position: relative;
+      }
+
+      .input__submit--wrapper::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 48px 48px 28px;
+        border-color: transparent #2F7EBD #2F7EBD transparent;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+      }
+
+      .form__input--submit {
+        width: 198px;
+        height: 48px;       
+        background-color: $header;
+        color: #fff;
+        border: none;
+        font-family: "Lato", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        cursor: pointer; 
+      }
+
+    }
+
+  }
+  .footer__copyright {
+    width: 100%;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    background-color: #14202D;
+  }
+}
+
+
+
